@@ -55,7 +55,7 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({ initialData }) => {
                 <FormItem>
                   <FormLabel>Nama</FormLabel>
                   <FormControl>
-                    <Input disabled={loading} placeholder="Nama Toko..." />
+                    <Input disabled={loading} placeholder="Nama Toko..." {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
