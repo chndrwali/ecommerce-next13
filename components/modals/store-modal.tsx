@@ -34,9 +34,10 @@ export const StoreModal = () => {
 
       const response = await axios.post('/api/stores', values);
 
-      toast.success('Berhasil Membuat Toko!');
+      window.location.assign(`${response.data.id}`);
+      // toast.success('Berhasil Membuat Toko!');
     } catch (error) {
-      toast.error('Ada sesuatu yang salah!');
+      toast.error('Ada sesuatu yang sala)h!');
     } finally {
       setLoading(false);
     }
@@ -65,10 +66,10 @@ export const StoreModal = () => {
               />
               <div className="pt-6 space-x-4 flex items-center justify-end w-full">
                 <Button disabled={loading} variant="outline" onClick={storeModal.onClose}>
-                  Cancel
+                  Batal
                 </Button>
                 <Button disabled={loading} type="submit">
-                  Continue
+                  Lanjutkan
                 </Button>
               </div>
             </form>
