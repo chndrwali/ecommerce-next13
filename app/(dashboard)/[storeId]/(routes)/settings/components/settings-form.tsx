@@ -10,7 +10,7 @@ import { useState } from 'react';
 import { Heading } from '@/components/ui/heading';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 
 interface SettingsFormProps {
@@ -57,10 +57,14 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({ initialData }) => {
                   <FormControl>
                     <Input disabled={loading} placeholder="Nama Toko..." />
                   </FormControl>
+                  <FormMessage />
                 </FormItem>
               )}
             />
           </div>
+          <Button disabled={loading} className="ml-auto" type="submit">
+            Simpan Perubahan
+          </Button>
         </form>
       </Form>
     </>
