@@ -31,7 +31,7 @@ export const StoreModal = () => {
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       setLoading(true);
-      throw new Error('x');
+
       const response = await axios.post('/api/stores', values);
 
       toast.success('Berhasil Membuat Toko!');
@@ -43,7 +43,7 @@ export const StoreModal = () => {
   };
 
   return (
-    <Modal title="Create Store" description="Add New Store to manage product and categories" isOpen={storeModal.isOpen} onClose={storeModal.onClose}>
+    <Modal title="Buat Toko" description="Buat Toko baru untuk mengelola produk dan kategori" isOpen={storeModal.isOpen} onClose={storeModal.onClose}>
       <div>
         <div className="space-y-4 py-2 pb-4">
           <Form {...form}>
@@ -54,7 +54,7 @@ export const StoreModal = () => {
                 render={({ field }) => {
                   return (
                     <FormItem>
-                      <FormLabel>Name</FormLabel>
+                      <FormLabel>Nama</FormLabel>
                       <FormControl>
                         <Input disabled={loading} placeholder="E-commerce" {...field} />
                       </FormControl>
